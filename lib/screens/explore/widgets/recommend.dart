@@ -1,56 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/explore/explore_viewmodel.dart';
 import 'package:flutter_application_1/screens/explore/widgets/read_audio_button.dart';
 import 'package:flutter_application_1/screens/post/post_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BookData {
-  final String title;
-  final String author;
-  final String imageUrl;
-  final Color themeColor;
-
-  const BookData({
-    required this.title,
-    required this.author,
-    required this.imageUrl,
-    required this.themeColor,
-  });
-}
-
-final List<BookData> recommendBooks = [
-  const BookData(
-    title: "Unlimited Power",
-    author: "Tony Robbins",
-    imageUrl: "https://m.media-amazon.com/images/I/71OJtpj-zLL._AC_UF1000,1000_QL80_.jpg",
-    themeColor: Colors.amber,
-  ),
-  const BookData(
-    title: "Atomic Habits",
-    author: "James Clear",
-    imageUrl: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg",
-    themeColor: Colors.blueAccent,
-  ),
-  const BookData(
-    title: "Deep Work",
-    author: "Cal Newport",
-    imageUrl: "https://m.media-amazon.com/images/I/71pqZChaJkL.jpg",
-    themeColor: Colors.redAccent,
-  ),
-];
-
-class Recommend extends StatefulWidget {
+class Recommend extends ConsumerStatefulWidget {
   const Recommend({super.key});
 
   @override
-  State<Recommend> createState() => _RecommendState();
+  ConsumerState<Recommend> createState() => _RecommendState();
 }
 
-class _RecommendState extends State<Recommend> {
+class _RecommendState extends ConsumerState<Recommend> {
   final PageController _pageController = PageController(viewportFraction: 0.7);
   int _currentPage = 0;
-  
+
   @override
   Widget build(BuildContext context) {
-    final currentBook = recommendBooks[_currentPage];
+    final books = ref.watch(exploreProvider).recommendBooks;
+    final currentBook = books[_currentPage];
 
     return Container(
       padding: EdgeInsets.symmetric(vertical: 24),
@@ -79,9 +47,9 @@ class _RecommendState extends State<Recommend> {
                     clipBehavior: Clip.none,
                     controller: _pageController,
                     onPageChanged: (index) => setState(() => _currentPage = index),
-                    itemCount: recommendBooks.length,
+                    itemCount: books.length,
                     itemBuilder: (context, index) {
-                      final book = recommendBooks[index];
+                      final book = books[index];
                       // double scale = _currentPage == index ? 1.0 : 0.8;
 
                       return TweenAnimationBuilder(

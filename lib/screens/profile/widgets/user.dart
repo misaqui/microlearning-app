@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/profile/profile_viewmodel.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class User extends StatelessWidget {
+class User extends ConsumerWidget {
   const User({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final user = ref.watch(profileProvider).user;
     return Container(
       alignment: Alignment.center,
       child: Column(
@@ -13,21 +16,19 @@ class User extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 50,
-            backgroundImage: NetworkImage(
-              "https://i.pinimg.com/736x/ef/f6/a5/eff6a59646f0c300b817c0e384972f83.jpg",
-            ),
+            backgroundImage: NetworkImage(user.avatarUrl),
           ),
 
           Column(
             children: [
               Text(
-                "Krit",
+                user.name,
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text("@krit348",)
+              Text(user.username),
             ],
           ),
 
@@ -35,8 +36,8 @@ class User extends StatelessWidget {
             spacing: 12,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("0 Followers"),
-              Text("0 Following")
+              Text("${user.followers} Followers"),
+              Text("${user.following} Following"),
             ],
           )
         ],
