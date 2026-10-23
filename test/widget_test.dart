@@ -7,7 +7,7 @@ void main() {
   testWidgets('Main navigation switches between all five sections',
       (tester) async {
     final pages = <Widget>[
-      for (final name in ['Home', 'Explore', 'Library', 'Create', 'Profile'])
+      for (final name in ['Discover', 'Explore', 'Library', 'Create', 'Profile'])
         Center(child: Text('Screen: $name')),
     ];
 
@@ -20,7 +20,7 @@ void main() {
     );
 
     expect(find.byType(BottomNavigationBar), findsOneWidget);
-    expect(find.text('Screen: Home'), findsOneWidget);
+    expect(find.text('Screen: Discover'), findsOneWidget);
 
     for (final name in ['Explore', 'Library', 'Create']) {
       await tester.tap(find.text(name).last);
