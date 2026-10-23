@@ -21,7 +21,7 @@ class _MainNavigationState extends State<MainNavigation> {
   int _selectedIndex = 0;
 
   static final List<Widget> _pages = <Widget>[
-    const HomeScreen(title: "Deepstash"),
+    const HomeScreen(title: "Microlearning"),
     const ExploreScreen(),
     const LibraryScreen(),
     const CreateScreen(),
@@ -49,59 +49,23 @@ class _MainNavigationState extends State<MainNavigation> {
       body: Center(
         child: (widget.pages ?? _pages).elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            color: Colors.blue[700],
-            child: Row(
-              children: [
-                const Icon(Icons.shield, color: Colors.white, size: 20),
-                const SizedBox(width: 12),
-                const Expanded(
-                  child: Text(
-                    "We want to help reach your potential",
-                    style: TextStyle(color: Colors.white, fontSize: 12),
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const GiftScreen())
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.blue[900],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 12),
-                  ),
-                  child: Text("Claim Now", style: TextStyle(fontWeight: FontWeight.bold)),
-                ),
-              ],
-            ),
-          ),
-          BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-
-            items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(icon: Icon(Icons.explore),label: 'Explore',),
-              BottomNavigationBarItem(icon: Icon(Icons.library_books), label: 'Library'),
-              BottomNavigationBarItem(icon: Icon(Icons.create), label: 'Create'),
-              BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "Profile"),
-            ],
-            currentIndex: _selectedIndex,
-            // selectedItemColor: Theme.of(context).colorScheme.inversePrimary,
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.grey[600],
-            onTap: _onItemTapped,
-          ),
-        ],
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Theme.of(context).colorScheme.surface,
+          selectedItemColor: Theme.of(context).colorScheme.primary,
+          unselectedItemColor: Theme.of(context).colorScheme.onSurfaceVariant,
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.auto_awesome_outlined), label: 'Discover'),
+            BottomNavigationBarItem(icon: Icon(Icons.explore_outlined), label: 'Explore'),
+            BottomNavigationBarItem(icon: Icon(Icons.bookmark_outline), label: 'Library'),
+            BottomNavigationBarItem(icon: Icon(Icons.edit_outlined), label: 'Create'),
+            BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
+          ],
+        ),
       ),
     );
   }
