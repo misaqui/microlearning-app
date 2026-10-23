@@ -10,26 +10,30 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
+    const ink = Color(0xFF193E43);
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Microlearning Hub',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.white,
-          brightness: Brightness.dark
+          seedColor: ink,
+          brightness: Brightness.light,
+          surface: const Color(0xFFF9F9F5),
         ),
+        scaffoldBackgroundColor: const Color(0xFFF9F9F5),
         useMaterial3: true,
       ),
       scrollBehavior: const MaterialScrollBehavior().copyWith(
         dragDevices: {
           PointerDeviceKind.mouse,
           PointerDeviceKind.touch,
-          PointerDeviceKind.trackpad, 
+          PointerDeviceKind.trackpad,
         },
       ),
-      home: const MainNavigation(title: 'Deepstash'),
+      home: const MainNavigation(title: 'Microlearning Hub'),
     );
   }
 }
