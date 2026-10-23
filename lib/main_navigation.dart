@@ -7,9 +7,11 @@ import 'package:flutter_application_1/screens/library/library_screen.dart';
 import 'package:flutter_application_1/screens/profile/profile_screen.dart';
 
 class MainNavigation extends StatefulWidget {
-  const MainNavigation({super.key, required this.title});
+  const MainNavigation({super.key, required this.title, this.pages});
 
   final String title;
+  /// Optional test pages to verify navigation without external image requests.
+  final List<Widget>? pages;
 
   @override
   State<MainNavigation> createState() => _MainNavigationState();
@@ -45,7 +47,7 @@ class _MainNavigationState extends State<MainNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _pages.elementAt(_selectedIndex),
+        child: (widget.pages ?? _pages).elementAt(_selectedIndex),
       ),
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
@@ -91,9 +93,7 @@ class _MainNavigationState extends State<MainNavigation> {
               BottomNavigationBarItem(icon: Icon(Icons.explore),label: 'Explore',),
               BottomNavigationBarItem(icon: Icon(Icons.library_books), label: 'Library'),
               BottomNavigationBarItem(icon: Icon(Icons.create), label: 'Create'),
-              BottomNavigationBarItem(icon: CircleAvatar(
-                backgroundImage: NetworkImage("https://i.pinimg.com/1200x/fc/7d/83/fc7d837c5c1e43f8cf81253e35b7806b.jpg"),
-              ), label: "Profile"),
+              BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "Profile"),
             ],
             currentIndex: _selectedIndex,
             // selectedItemColor: Theme.of(context).colorScheme.inversePrimary,
