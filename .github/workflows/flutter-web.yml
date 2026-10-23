@@ -1,20 +1,17 @@
-name: Flutter Web checks
+name: Flutter web cleanroom CI
 on:
   push:
-    branches: [develop]
+    branches: [cleanroom-rebuild]
   pull_request:
-    branches: [main]
-permissions:
-  contents: read
 jobs:
-  verify:
+  test-and-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          cache: true
+      - run: flutter create --platforms=web .
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
