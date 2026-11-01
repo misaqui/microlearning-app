@@ -1,15 +1,31 @@
 name: Flutter web pilot CI
 on:
   push:
-    branches: [main]
+    branches: [develop, main]
   pull_request:
+    branches: [develop, main]
+    types: [opened, synchronize, reopened, edited]
 permissions:
   contents: read
 concurrency:
   group: flutter-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  branch-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Require validated release path into main
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        env:
+          VALID_RELEASE_SOURCE: ${{ github.head_ref == 'develop' && github.event.pull_request.head.repo.full_name == github.repository }}
+        run: |
+          if [ "$VALID_RELEASE_SOURCE" != "true" ]; then
+            echo 'Releases into main must come from develop in this repository.'
+            exit 1
+          fi
   test-and-build:
+    needs: branch-policy
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

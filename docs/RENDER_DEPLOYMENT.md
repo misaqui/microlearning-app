@@ -1,22 +1,20 @@
 # Render pilot deployment
 
-Target: confirmed workspace microlearning (tea-dbd9mji9lscs73ao01j0), static service srv-dbeih10m7kps73e0nb90. Never use padel.
+Workspace microlearning (tea-dbd9mji9lscs73ao01j0), static service srv-dbeih10m7kps73e0nb90. Never use padel.
 
-- Repository: misaqui/microlearning-app; canonical branch main. develop is historical.
-- Build: bash scripts/build-render-web.sh; publish directory build/web.
-- AutoDeploy remains off; release is manual, using reviewed commit after CI success and existing user release authorization.
-- Flutter 3.35.5 and committed pubspec.lock. Generate web scaffolding with --no-pub, then enforce lockfile; analysis/test/build do not resolve again.
-- No backend, authentication, ingestion, analytics or AI calls. Three original local lessons; local-only favorites. This is a usability pilot, not a secure multiuser product.
+Desired pilot configuration: repository misaqui/microlearning-app; branch develop; build bash scripts/build-render-web.sh; publish build/web; autoDeploy off. Verify hosted settings independently; this file alone does not apply them. main is reserved for validated versions, not daily development. See BRANCH_WORKFLOW.md.
 
-## Provenance
-The current main implementation was independently rebuilt. Do not import source, assets or content from historical clone branches; see UPSTREAM_PROVENANCE.md. The earlier upstream permission warning applies to that historical material, not to a claim of copied material in this independent pilot.
+The service was observed tracking main before this policy change. Changing its branch must not silently trigger a deployment. Use a manual pilot release after exact-candidate CI, and verify live status, SHA and browser behavior.
 
-## Release procedure
-1. Review exact PR head and Actions evidence. Merge to main, require main CI success before release.
-2. Confirm service/workspace/branch, current live deploy and target main SHA. Trigger one manual deploy and retain its ID; monitor until live or failed. Never equate accepted trigger with live.
-3. Inspect build evidence for lock enforcement, analyze, tests and web build. Verify deployed SHA matches intended main SHA.
-4. Browser: Discover -> detail -> save two ideas -> Library -> reload -> both remain. Remove one -> reload -> only remaining idea. Reopen same origin/profile and recheck. Check mobile layout separately; do not claim device QA from desktop evidence.
-5. Record evidence and remaining limitations. No cross-device/personal account persistence; clearing site data can erase favorites.
+Current independent baseline: Flutter Web with original local lessons. No backend, login, ingestion API or paid AI calls. Favorites persistence and dependency locking are proposed in PR #3 until integrated; do not describe pending code as published. Historical clone source/assets remain excluded; see UPSTREAM_PROVENANCE.md.
 
-## Rollback
-Revert the PR and manually release the previous approved source after its checks, or use the previous retained Render artifact when available. Confirm final live version and autoDeploy remains off. The local key may remain inert; do not delete unrelated browser data.
+## Validation and promotion
+1. Work PRs target develop. Check CI and review before integrating.
+2. For a pilot release, verify exact develop SHA, build gates and service settings; monitor the deploy to live.
+3. Exercise Discover, detail, save, Library and reload in browser. Once PR #3 lands, require favorites to survive reload and deletion to persist. Report device/browser limits.
+4. Promote a validated version only via develop-to-main PR with evidence. Production deployment remains a separate authorized action.
+
+Rollback: revert the offending PR on develop and manually release the previous approved candidate, checking final live SHA. Do not erase unrelated local preferences.
+
+## PR #3 candidate
+This candidate adds local favorites and commits pubspec.lock with exact hashes. CI/Render generate scaffolding with --no-pub, enforce the lock, and run analyze/test/build without resolving again. These changes remain unpublished until integration and manual pilot release; the checks against the old main-based merge are historical evidence only. Require new CI against develop.
