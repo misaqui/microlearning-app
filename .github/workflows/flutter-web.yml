@@ -1,18 +1,41 @@
-name: Flutter web cleanroom CI
+name: Flutter web pilot CI
 on:
   push:
-    branches: [cleanroom-rebuild]
+    branches: [develop, main]
   pull_request:
+    branches: [develop, main]
+    types: [opened, synchronize, reopened, edited]
+permissions:
+  contents: read
+concurrency:
+  group: flutter-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  test-and-build:
+  branch-policy:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Require validated release path into main
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        env:
+          VALID_RELEASE_SOURCE: ${{ github.head_ref == 'develop' && github.event.pull_request.head.repo.full_name == github.repository }}
+        run: |
+          if [ "$VALID_RELEASE_SOURCE" != "true" ]; then
+            echo 'Releases into main must come from develop in this repository.'
+            exit 1
+          fi
+  test-and-build:
+    needs: branch-policy
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: flutter create --platforms=web .
+          flutter-version: 3.35.5
+      - run: flutter create --platforms=web --project-name microlearning_hub --no-pub .
       - run: flutter pub get
-      - run: flutter analyze
-      - run: flutter test
-      - run: flutter build web --release
+      - run: flutter analyze --no-pub
+      - run: flutter test --no-pub
+      - run: flutter build web --release --no-pub

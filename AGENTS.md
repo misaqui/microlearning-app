@@ -10,7 +10,10 @@ Build an independently authored, maintainable Flutter microlearning product. Opt
 - Explicitly distinguish proposed, implemented, tested and deployed work.
 
 ## Workflow
-- GitHub main is the canonical clean implementation. Use short-lived feature branches and PRs for nontrivial changes.
+- GitHub develop is the clean integration and validation branch, recreated from main on 1 November 2026. Start short-lived work branches from develop and target develop with work PRs.
+- main contains validated releases only. Promote through a develop-to-main release PR after CI and functional/browser validation of the exact candidate; do not merge work PRs directly into main.
+- CI checks pushes and PRs for develop and main. The branch-policy gate only permits release PRs into main from develop in this repository. GitHub branch protection is separate; do not claim direct pushes are blocked unless verified.
+- The Render pilot should track develop with manual releases and autoDeploy off; main promotion does not itself authorize a production deployment.
 - Before editing, read the relevant code, product specification and architecture. Change only what the task needs.
 - Keep work independently authored; do not copy legacy Deepstash source, assets or proprietary content.
 - Prefer Flutter SDK and few well-supported dependencies; justify every new service/dependency.
