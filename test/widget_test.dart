@@ -15,6 +15,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpAndSettle();
+    await (await SharedPreferences.getInstance()).reload();
     await tester.pumpWidget(const MicrolearningApp());
     await tester.pumpAndSettle();
     await tester.tap(find.byIcon(Icons.bookmark_outline));

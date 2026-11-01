@@ -39,13 +39,21 @@ void main() {
       await tester.tap(find.byKey(const Key('idea-habits')));
       await tester.pumpAndSettle();
       expect(
-        tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+        tester
+            .widget<FilledButton>(
+              find.byWidgetPredicate((widget) => widget is FilledButton),
+            )
+            .onPressed,
         isNull,
       );
       store.pendingWrite!.complete();
       await tester.pumpAndSettle();
       expect(
-        tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+        tester
+            .widget<FilledButton>(
+              find.byWidgetPredicate((widget) => widget is FilledButton),
+            )
+            .onPressed,
         isNotNull,
       );
       await tester.tap(find.text('Guardar en Biblioteca'));
@@ -71,7 +79,11 @@ void main() {
       await tester.tap(find.byKey(const Key('idea-focus')));
       await tester.pumpAndSettle();
       expect(
-        tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+        tester
+            .widget<FilledButton>(
+              find.byWidgetPredicate((widget) => widget is FilledButton),
+            )
+            .onPressed,
         isNull,
       );
       expect(store.ids, {'focus', 'unknown'});
@@ -120,7 +132,11 @@ void main() {
       await tester.tap(find.text('Guardar en Biblioteca'));
       await tester.pump();
       expect(
-        tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+        tester
+            .widget<FilledButton>(
+              find.byWidgetPredicate((widget) => widget is FilledButton),
+            )
+            .onPressed,
         isNull,
       );
       await tester.pageBack();
