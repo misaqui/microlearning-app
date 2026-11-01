@@ -264,6 +264,10 @@ class _MicrolearningHomeState extends State<MicrolearningHome> {
             child: selected == 0 || selected == 1
                 ? loading
                       ? const Center(child: CircularProgressIndicator())
+                      : selected == 1 && loadFailed
+                      ? const Center(
+                          child: Text('Biblioteca no disponible temporalmente.'),
+                        )
                       : ideaList(items)
                 : Center(
                     child: Text(
