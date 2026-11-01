@@ -24,6 +24,20 @@ class ControlledStore implements FavoriteStore {
 }
 
 void main() {
+  testWidgets('unreadable library is not presented as empty', (tester) async {
+    final store = ControlledStore()..failRead = true;
+    await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byIcon(Icons.bookmark_outline));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('No se pudo leer Biblioteca'), findsOneWidget);
+    expect(
+      find.textContaining('Todavía no tienes ideas guardadas'),
+      findsNothing,
+    );
+    expect(store.ids, {'focus', 'unknown'});
+  });
+
   testWidgets(
     'write in previous detail prevents a second stale snapshot write',
     (tester) async {
