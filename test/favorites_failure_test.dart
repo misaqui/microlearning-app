@@ -25,6 +25,43 @@ class ControlledStore implements FavoriteStore {
 
 void main() {
   testWidgets(
+    'write in previous detail prevents a second stale snapshot write',
+    (tester) async {
+      final store = ControlledStore()..pendingWrite = Completer<void>();
+      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('idea-recall')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Guardar en Biblioteca'));
+      await tester.pump();
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('idea-habits')));
+      await tester.pumpAndSettle();
+      expect(
+        tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+        isNull,
+      );
+      store.pendingWrite!.complete();
+      await tester.pumpAndSettle();
+      expect(
+        tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+        isNotNull,
+      );
+      await tester.tap(find.text('Guardar en Biblioteca'));
+      await tester.pumpAndSettle();
+      await tester.pumpWidget(const SizedBox.shrink());
+      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byIcon(Icons.bookmark_outline));
+      await tester.pumpAndSettle();
+      expect(find.text('La atención es un recurso limitado'), findsOneWidget);
+      expect(find.text('Recordar refuerza el aprendizaje'), findsOneWidget);
+      expect(find.text('Empieza con hábitos pequeños'), findsOneWidget);
+    },
+  );
+
+  testWidgets(
     'read failure protects storage while discovery remains available',
     (tester) async {
       final store = ControlledStore()..failRead = true;
