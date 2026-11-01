@@ -4,7 +4,7 @@ Target: workspace microlearning (tea-dbd9mji9lscs73ao01j0). Never use padel.
 
 Frontend: Flutter Web static site.
 Repository: misaqui/microlearning-app
-Branch: develop
+Branch: main (canonical independent clean implementation; develop is historical)
 Build: bash scripts/build-render-web.sh
 Publish directory: build/web
 Autodeploy: off until checks and redistribution rights are cleared.

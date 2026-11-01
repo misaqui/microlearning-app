@@ -46,7 +46,10 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.byIcon(Icons.bookmark_outline));
     await tester.pumpAndSettle();
-    expect(find.textContaining('Todavía no tienes ideas guardadas'), findsOneWidget);
+    expect(
+      find.textContaining('Todavía no tienes ideas guardadas'),
+      findsOneWidget,
+    );
   });
 
   testWidgets('Saved idea can be removed', (tester) async {
