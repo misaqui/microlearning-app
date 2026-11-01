@@ -5,10 +5,10 @@ Start with one coordinator and specialized *review roles on demand*, not a manda
 
 ## Workflow
 1. Product owner supplies objective. Coordinator writes acceptance criteria and risk/cost boundaries.
-2. Developer implements on a task branch with the minimum viable code.
+2. Developer branches from develop and implements the minimum viable code; work PRs target develop.
 3. QA/security independently evaluates high-risk changes; FinOps reviews new infrastructure and AI API usage.
 4. GitHub Actions validates static analysis, tests and web compilation.
-5. Coordinator reports verified result and prepares release decision. Production deploy requires approval.
+5. Coordinator reports CI and functional evidence for the exact develop candidate. Only a validated version is promoted through a develop-to-main PR. Production deploy requires approval.
 
 ## Learning protocol
 Explain **concept → choice → action → evidence → implication** in approachable Spanish, pairing core terms with English once.
