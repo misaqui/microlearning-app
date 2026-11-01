@@ -81,6 +81,13 @@ class _MicrolearningHomeState extends State<MicrolearningHome> {
 
   bool loading = true;
   bool loadFailed = false;
+  final saving = ValueNotifier<bool>(false);
+
+  @override
+  void dispose() {
+    saving.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -108,7 +115,6 @@ class _MicrolearningHomeState extends State<MicrolearningHome> {
   }
 
   void openIdea(LearningIdea idea) {
-    bool saving = false;
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (context) => Scaffold(
@@ -130,12 +136,13 @@ class _MicrolearningHomeState extends State<MicrolearningHome> {
               const SizedBox(height: 24),
               Text('${idea.minutes} min de lectura'),
               const SizedBox(height: 20),
-              StatefulBuilder(
-                builder: (context, refresh) => FilledButton.icon(
-                  onPressed: loading || loadFailed || saving
+              ValueListenableBuilder<bool>(
+                valueListenable: saving,
+                builder: (context, isSaving, _) => FilledButton.icon(
+                  onPressed: loading || loadFailed || isSaving
                       ? null
                       : () async {
-                          refresh(() => saving = true);
+                          saving.value = true;
                           final next = Set<String>.of(savedIds);
                           if (!next.add(idea.id)) next.remove(idea.id);
                           try {
@@ -158,7 +165,7 @@ class _MicrolearningHomeState extends State<MicrolearningHome> {
                               );
                             }
                           } finally {
-                            if (context.mounted) refresh(() => saving = false);
+                            if (mounted) saving.value = false;
                           }
                         },
                   icon: Icon(
@@ -167,7 +174,7 @@ class _MicrolearningHomeState extends State<MicrolearningHome> {
                         : Icons.bookmark_add_outlined,
                   ),
                   label: Text(
-                    saving
+                    isSaving
                         ? 'Guardando…'
                         : loading || loadFailed
                         ? 'Guardado no disponible'

@@ -1,4 +1,12 @@
-# Plan pequeño — favoritos locales
+# Favoritos locales — Implementation Plan
+
+> **For agentic workers:** usar superpowers:executing-plans; ejecución directa delegada por usuario.
+
+**Goal:** conservar favoritos entre reinicios sin backend.
+**Architecture:** adaptador FavoriteStore y estado Flutter con escrituras confirmadas.
+**Tech Stack:** Flutter 3.35.5 y shared_preferences.
+**Global Constraints:** main canónica; autoría independiente; EUR 0/mes adicional; no deploy automático.
+
 Spec: ../specs/2026-11-01-local-favorites-design.md
 Ejecución directa delegada por usuario, sin confirmaciones rutinarias.
 
