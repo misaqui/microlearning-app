@@ -142,6 +142,7 @@ class _MicrolearningHomeState extends State<MicrolearningHome> {
                   onPressed: loading || loadFailed || isSaving
                       ? null
                       : () async {
+                          if (saving.value || loading || loadFailed) return;
                           saving.value = true;
                           final next = Set<String>.of(savedIds);
                           if (!next.add(idea.id)) next.remove(idea.id);
