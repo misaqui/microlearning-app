@@ -10,8 +10,8 @@ Microlecciones locales originales disponibles en Descubrir. Al pulsar una tarjet
 - Existen pruebas de recorrido principal, estado vacío y eliminación.
 - No se añade backend, autenticación, analítica ni gasto recurrente.
 
-## Limitación intencionada
-El guardado vive solo en memoria durante la sesión de la aplicación. Se pierde al recargar el navegador. Persistencia local y sincronización se evaluarán en otra fase.
+## Persistencia local (cambio preparado para el piloto)
+Los IDs se guardan con shared_preferences bajo una clave versionada. Se recuperan al iniciar y se eliminan de forma persistente al quitarlos de Biblioteca. El alcance es este navegador/origen/perfil; no hay sincronización ni garantía frente al borrado de datos. Un fallo de lectura bloquea escrituras; un fallo de escritura conserva el estado visible y permite reintentar. Ver PILOT_VALIDATION.md y la PR para estado de validación/publicación.
 
 ## Aprendizaje
 **Vertical slice**: recorrido de usuario completo, de extremo a extremo, con alcance pequeño y verificable.

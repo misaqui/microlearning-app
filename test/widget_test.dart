@@ -1,10 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:microlearning_hub/main.dart';
 
 void main() {
+  setUp(() => SharedPreferences.setMockInitialValues({}));
+
+  testWidgets('saved favorite survives a complete app restart', (tester) async {
+    await tester.pumpWidget(const MicrolearningApp());
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('idea-focus')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Guardar en Biblioteca'));
+    await tester.pumpAndSettle();
+    await tester.pumpWidget(const SizedBox.shrink());
+    await tester.pumpAndSettle();
+    await (await SharedPreferences.getInstance()).reload();
+    await tester.pumpWidget(const MicrolearningApp());
+    await tester.pumpAndSettle();
+    await tester.tap(find.byIcon(Icons.bookmark_outline));
+    await tester.pumpAndSettle();
+    expect(find.text('La atención es un recurso limitado'), findsOneWidget);
+    expect(find.text('Recordar refuerza el aprendizaje'), findsNothing);
+  });
+
   testWidgets('Discover, open, save and recover from Library', (tester) async {
     await tester.pumpWidget(const MicrolearningApp());
+    await tester.pumpAndSettle();
     expect(find.text('La atención es un recurso limitado'), findsOneWidget);
     await tester.tap(find.byKey(const Key('idea-focus')));
     await tester.pumpAndSettle();
@@ -22,13 +44,18 @@ void main() {
 
   testWidgets('Library displays useful empty state', (tester) async {
     await tester.pumpWidget(const MicrolearningApp());
+    await tester.pumpAndSettle();
     await tester.tap(find.byIcon(Icons.bookmark_outline));
     await tester.pumpAndSettle();
-    expect(find.textContaining('Todavía no tienes ideas guardadas'), findsOneWidget);
+    expect(
+      find.textContaining('Todavía no tienes ideas guardadas'),
+      findsOneWidget,
+    );
   });
 
   testWidgets('Saved idea can be removed', (tester) async {
     await tester.pumpWidget(const MicrolearningApp());
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('idea-focus')));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Guardar en Biblioteca'));

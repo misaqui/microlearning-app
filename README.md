@@ -1,16 +1,25 @@
-# flutter_application_1
+# Microlearning Hub
 
-A new Flutter project.
+Prototipo Flutter Web con tres microlecciones originales, detalle y favoritos locales persistentes. Repasar y Perfil siguen pendientes; no hay backend, autenticación ni sincronización entre dispositivos.
 
-## Getting Started
+## Trabajo individual
+main es la única rama permanente. Cambios pequeños directamente en main; ramas temporales y PR a main cuando convenga aislar una mejora. No hay develop ni promoción entre ramas.
+Ver [flujo de trabajo](docs/BRANCH_WORKFLOW.md).
 
-This project is a starting point for a Flutter application.
+## Validación
+Flutter 3.35.5. GitHub Actions genera la plataforma web, respeta pubspec.lock y ejecuta análisis, pruebas y compilación.
+Para un entorno con Flutter preparado:
 
-A few resources to get you started if this is your first Flutter project:
+```sh
+flutter create --platforms=web --project-name microlearning_hub --no-pub .
+flutter pub get --enforce-lockfile
+flutter analyze --no-pub
+flutter test --no-pub
+flutter build web --release --no-pub
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Publicación
+Render usa main, build `bash scripts/build-render-web.sh` y directorio `build/web`. El despliegue es manual y autoDeploy permanece desactivado. Integrar no publica automáticamente.
+Ver [despliegue](docs/RENDER_DEPLOYMENT.md) y [evidencias](docs/PILOT_VALIDATION.md).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Los favoritos pertenecen al navegador/origen/perfil y pueden perderse al borrar sus datos. No guardar secretos. Consultar [procedencia](docs/UPSTREAM_PROVENANCE.md) antes de distribuir contenido derivado.
