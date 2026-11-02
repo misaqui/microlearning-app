@@ -1,20 +1,21 @@
-# Render pilot deployment
+# Render: publicación manual desde main
 
-Workspace microlearning (tea-dbd9mji9lscs73ao01j0), static service srv-dbeih10m7kps73e0nb90. Never use padel.
+Workspace microlearning (tea-dbd9mji9lscs73ao01j0), static service srv-dbeih10m7kps73e0nb90. No usar padel.
 
-Desired pilot configuration: repository misaqui/microlearning-app; branch develop; build bash scripts/build-render-web.sh; publish build/web; autoDeploy off. Verify hosted settings independently; this file alone does not apply them. main is reserved for validated versions, not daily development. See BRANCH_WORKFLOW.md.
+Repositorio misaqui/microlearning-app; rama main; build `bash scripts/build-render-web.sh`; directorio publicado `build/web`; autoDeploy off.
+Esta configuración se observó en Render el 2 de noviembre de 2026. Verificarla de nuevo antes de publicar. No hay que cambiar la rama alojada para eliminar develop.
 
-The service was observed tracking main before this policy change. Changing its branch must not silently trigger a deployment. Use a manual pilot release after exact-candidate CI, and verify live status, SHA and browser behavior.
+## Código y versión publicada
+main contiene la integración del proyecto; que un cambio llegue a main no significa que esté publicado.
+En la auditoría, Render tenía como último despliegue live el commit ec406138 del 24 de octubre. La migración de ramas no autoriza ni realiza un despliegue.
+La implementación incluye favoritos locales y dependencia bloqueada; no hay backend, login, ingestión ni llamadas IA. Ver UPSTREAM_PROVENANCE.md para límites de procedencia.
 
-Current independent baseline: Flutter Web with original local lessons. No backend, login, ingestion API or paid AI calls. Favorites persistence and dependency locking are proposed in PR #3 until integrated; do not describe pending code as published. Historical clone source/assets remain excluded; see UPSTREAM_PROVENANCE.md.
+## Publicar cuando se solicite
+1. Identificar el SHA exacto de main y exigir CI correcta: análisis, pruebas y compilación.
+2. Confirmar rama main, autoDeploy off y comando de build; ejecutar el despliegue manual autorizado y seguirlo hasta live.
+3. Comprobar el SHA publicado y probar Descubrir, detalle, guardado, Biblioteca y recarga. Quitar una idea y comprobar que la eliminación persiste.
+4. Registrar límites de dispositivo/navegador; CI no sustituye la prueba funcional.
 
-## Validation and promotion
-1. Work PRs target develop. Check CI and review before integrating.
-2. For a pilot release, verify exact develop SHA, build gates and service settings; monitor the deploy to live.
-3. Exercise Discover, detail, save, Library and reload in browser. Once PR #3 lands, require favorites to survive reload and deletion to persist. Report device/browser limits.
-4. Promote a validated version only via develop-to-main PR with evidence. Production deployment remains a separate authorized action.
+Flutter 3.35.5; generación de scaffolding con --no-pub, resolución con --enforce-lockfile y análisis/pruebas/build sin nueva resolución.
 
-Rollback: revert the offending PR on develop and manually release the previous approved candidate, checking final live SHA. Do not erase unrelated local preferences.
-
-## PR #3 candidate
-This candidate adds local favorites and commits pubspec.lock with exact hashes. CI/Render generate scaffolding with --no-pub, enforce the lock, and run analyze/test/build without resolving again. These changes remain unpublished until integration and manual pilot release; the checks against the old main-based merge are historical evidence only. Require new CI against develop.
+Rollback: revertir el cambio en main o publicar manualmente la versión anterior aprobada, comprobando el SHA final. No borrar preferencias ajenas.

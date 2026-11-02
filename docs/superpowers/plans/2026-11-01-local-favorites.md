@@ -1,5 +1,7 @@
 # Favoritos locales — Implementation Plan
 
+> Registro histórico del 1 de noviembre. La política vigente de ramas es main como única rama permanente; ver docs/BRANCH_WORKFLOW.md. Este registro no constituye instrucciones actuales de integración o despliegue.
+
 > **For agentic workers:** usar superpowers:executing-plans; ejecución directa delegada por usuario.
 
 **Goal:** conservar favoritos entre reinicios sin backend.

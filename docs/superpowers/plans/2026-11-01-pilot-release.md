@@ -1,5 +1,7 @@
 # Pilot release hardening — 1 November 2026
 
+> Registro histórico del 1 de noviembre. La política vigente de ramas es main como única rama permanente; ver docs/BRANCH_WORKFLOW.md. Este registro no constituye instrucciones actuales de integración o despliegue.
+
 ## Discovery and review
 Two actual independent review agents inspected f21895f and its CI evidence. No persistence code blocker found. Delivery risks: dependency graph not locked; main push not checked; unreadable Library incorrectly claims it is empty. Prior CI checks GitHub's synthetic merge, not the isolated head.
 

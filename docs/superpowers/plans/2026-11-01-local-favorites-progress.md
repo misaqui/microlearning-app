@@ -1,5 +1,7 @@
 # Registro de ejecución — favoritos locales
 
+> Registro histórico del 1 de noviembre. La política vigente de ramas es main como única rama permanente; ver docs/BRANCH_WORKFLOW.md. Este registro no constituye instrucciones actuales de integración o despliegue.
+
 ## Decisiones delegadas
 - main ec406138 como base; clone nuevo aislado y rama fix/local-favorites. No se tocó develop.
 - shared_preferences elegido por el implementador: una dependencia, sin backend ni coste recurrente; almacenamiento best-effort del navegador.

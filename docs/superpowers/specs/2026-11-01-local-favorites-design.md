@@ -1,5 +1,7 @@
 # Persistencia local para el piloto
 
+> Registro histórico del 1 de noviembre. La política vigente de ramas es main como única rama permanente; ver docs/BRANCH_WORKFLOW.md. Este registro no constituye instrucciones actuales de integración o despliegue.
+
 Base: main ec406138f7bee9ef2e5c1cd989655ee85a024358. Autoría independiente.
 El usuario delegó decisiones y ejecución sin confirmaciones rutinarias; minitests pausados.
 

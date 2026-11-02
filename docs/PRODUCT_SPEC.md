@@ -22,7 +22,7 @@ Web source draft: type=web; URL=null until provided; refresh=manual; publication
 Inspiration source: references to apps, websites and repositories for product improvement, **not** learner content. Analyses generate feature proposals only; no automatic code change.
 
 ## Resource efficiency
-Keep Flutter + Riverpod. Prefer one small modular API, PostgreSQL, object storage only when required. Paginate feeds, lazy load media, cache published cards, batch ingestion and avoid LLM calls when serving read requests. Define spending limits for ingestion and AI.
+Use Flutter; current prototype state uses SDK widgets. Evaluate Riverpod only if future state complexity justifies it. Prefer one small modular API, PostgreSQL, object storage only when required. Paginate feeds, lazy load media, cache published cards, batch ingestion and avoid LLM calls when serving read requests. Define spending limits for ingestion and AI.
 
 ## Security gates
 No deployment of copied upstream code until redistribution rights are clarified. Server-side authorization, invite-only accounts, least privilege, rate limiting, CSRF/CORS review, input validation, audit trail; URL ingestion must block private/internal destinations, validate redirects, enforce size/time limits; file ingestion should scan files and restrict types. No API secrets in Flutter web bundle. Automated dependency/security scans and tests before release.

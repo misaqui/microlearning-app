@@ -11,4 +11,4 @@ Estado: **pendiente de confirmación documental**.
 - Conservar la procedencia y cualquier aviso de derechos existente; revisar también imágenes, marcas y dependencias de terceros.
 - Antes de publicar o redistribuir una versión derivada, verificar una licencia aplicable o una autorización escrita que cubra modificación, distribución y, si procede, uso comercial.
 
-Decisión operativa: preparar funcionalidades y pruebas en `develop`; bloquear la distribución pública de código derivado mientras el permiso no esté confirmado.
+Decisión operativa: preparar funcionalidades y pruebas en `main` o ramas temporales; bloquear la distribución pública de código derivado mientras el permiso no esté confirmado.

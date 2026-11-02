@@ -1,23 +1,18 @@
-# Branch workflow — effective 1 November 2026
+# Flujo de trabajo — main como única rama permanente
 
-User decision supersedes the earlier main-first development policy.
+Vigente desde el 2 de noviembre de 2026 por decisión expresa del propietario, que trabaja solo. Sustituye la política main/develop del 1 de noviembre.
 
-## Discovery, alternatives and decision
-main and recreated develop both start at ec406138. The earlier develop implementation is historical and must not be reintroduced. Direct main integration was considered earlier; the user now chooses development and pilot validation in develop, with main reserved for validated versions.
+## Trabajo diario
+- main reúne el código del proyecto y es la rama predeterminada.
+- Para cambios pequeños y de bajo riesgo, trabajar en main y validar antes de dar el cambio por terminado.
+- Para cambios que necesitan aislamiento, usar una rama temporal y una PR directamente a main. Una vez integrada, eliminar la rama temporal.
+- No mantener develop, ramas de promoción ni dos integraciones por cada mejora.
 
-## Workflow and acceptance
-1. Branch short-lived work from develop; all work PRs target develop. Existing PR #3 is retargeted, not automatically merged.
-2. CI checks PRs and pushes for develop and main: branch-policy, Flutter analysis, tests and web release build. No IA/backend/new paid resources.
-3. Merge reviewed work into develop, validate the exact integrated commit with CI and browser acceptance. The pilot Render service should track develop with autoDeploy off and manual releases.
-4. Once that candidate has CI and functional evidence, open a release PR from this repository's develop into main. This is the explicit exception to all work PRs targeting develop. Link candidate SHA, successful checks, browser evidence, limitations and rollback. Revalidate the resulting release commit.
-5. Never interpret green CI alone as functional acceptance. main promotion and production deployment are distinct actions.
+## Validación y publicación
+GitHub Actions analiza, ejecuta pruebas y compila Flutter Web en PRs a main y en pushes a main. Revisar la CI del commit integrado. Las comprobaciones de navegador corresponden a la compilación exacta probada; registrar los límites.
+Render sigue main, con autoDeploy off y publicación manual. Integrar código y publicarlo son acciones separadas.
+No se añade una obligación de aprobación formal de otra persona para este proyecto individual. Las protecciones administrativas deben verificarse por separado; este documento no las configura.
 
-## Configuration versus administrative protection
-Actions rejects PRs targeting main from a different source branch/repository. This gate is not an administrative ban on direct pushes; required checks/rulesets and the default branch need separate GitHub settings access. Do not claim those settings changed until observed.
-GitHub default branch: desired develop. Render pilot branch: desired develop. Their actual settings must be verified separately; changing a settings document does not change the hosted service.
-
-## Rollback
-Revert the workflow configuration PR on develop to undo this policy configuration. Restore hosted settings separately if they were changed. Do not reset develop back to historical clone commits or merge historical sources. Keep main and production untouched during configuration.
-
-## Verification plan
-Static checks: YAML parsed, branch-source allow/reject cases evaluated, shell syntax and diff whitespace. Actions must pass on configuration PR before integration, then develop push. PR #3 must incorporate new policy without dropping dependency locking. Local Flutter execution remains blocked by earlier review; use Actions.
+## Migración y recuperación
+Se preserva la historia de develop 8409ad44 y de favoritos 4cbd51ad en la integración hacia main. La eliminación de las referencias de rama se realiza después de integrar y comprobar la CI de main; no se descartan sus commits.
+Para deshacer un cambio usar un commit de reversión en main. Si se publicó, desplegar manualmente una versión anterior aprobada. No reescribir la historia ni borrar las preferencias del navegador.

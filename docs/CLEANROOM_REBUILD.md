@@ -1,6 +1,6 @@
 # Cleanroom rebuild: inventory and cost guardrails
 
-Status: independent prototype; not production-ready. The historical `main` and `develop` branches are preserved.
+Status: independent prototype; not production-ready. main is the only permanent branch. Historical commits remain in Git history; see BRANCH_WORKFLOW.md.
 
 ## Removed from this branch
 - Original Deepstash-inspired `lib/` implementation, example data, images and UI resources.
@@ -9,7 +9,7 @@ Status: independent prototype; not production-ready. The historical `main` and `
 
 ## Preserved
 - Product, architecture, provenance and delivery documents in `docs/`.
-- Git history and legacy branches as evidence only; do not merge inherited implementation into this branch.
+- Git history as evidence only; do not reintroduce the inherited implementation.
 
 ## Rebuilt independently
 - Four-tab navigation: Discover, Library, Review, Profile.

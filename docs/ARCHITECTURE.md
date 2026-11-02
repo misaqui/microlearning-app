@@ -3,7 +3,7 @@
 Status: design only; no API, database, AI pipeline, or authentication is implemented by these documents.
 
 ## Existing baseline
-Original upstream project uses Flutter and flutter_riverpod, has navigation/screens for Home, Explore, Library, Create, Profile. Preserve that structure; progressively rename and refactor widgets. Verify Flutter Web build and tests before altering UI.
+The independently rebuilt Flutter Web prototype has Discover, Library, Review and Profile tabs, three original local lessons and local favorites through shared_preferences. Review and Profile are placeholders. Current application state uses Flutter SDK widgets; Riverpod below is a proposal, not an implemented dependency. main is the only permanent branch. Do not restore upstream source or assets. Verify Flutter Web build and tests before altering UI.
 
 ## Proposed components
 1. Flutter Web client, Riverpod application state.
