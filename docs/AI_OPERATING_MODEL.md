@@ -5,10 +5,10 @@ Start with one coordinator and specialized *review roles on demand*, not a manda
 
 ## Workflow
 1. Product owner supplies objective. Coordinator writes acceptance criteria and risk/cost boundaries.
-2. Implement the minimum viable code on main for small changes, or use a short-lived branch and PR directly to main when isolation helps. This is a solo project; no develop or release-promotion branch.
+2. Implement on a short-lived branch from develop and open a PR into develop. Promote through a develop-to-main release PR after validation.
 3. QA/security independently evaluates high-risk changes; FinOps reviews new infrastructure and AI API usage.
 4. GitHub Actions validates static analysis, tests and web compilation.
-5. Report CI and functional evidence for the exact main candidate. Check main CI after integration. Publication is manual and requires deployment authorization; no second promotion PR.
+5. Report CI and functional evidence for the exact main candidate. Check main CI after release integration. Publication is manual and requires deployment authorization.
 
 ## Learning protocol
 Explain **concept → choice → action → evidence → implication** in approachable Spanish, pairing core terms with English once.

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "plantas-carne-nutrientes",
+    "source_url": "https://www.kew.org/read-and-watch/carnivorous-plants",
+    "source_title": "Carnivorous plants explained: Venus flytraps, pitcher plants & more",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn1search0",
+    "result": "verified",
+    "support": "Trampas y suelos pobres; dos contactos para cierre y estímulos adicionales para digestión."
+  },
+  {
+    "id": "micelio-suelo-invisible",
+    "source_url": "https://www.kew.org/read-and-watch/fungi-hidden-dimension",
+    "source_title": "Mycelium: Exploring the hidden dimension of fungi",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn5search2",
+    "result": "verified",
+    "support": "Hifas, enzimas y asociaciones micorrícicas; no afirmar inteligencia colectiva."
+  },
+  {
+    "id": "orquideas-semillas-hongos",
+    "source_url": "https://www.kew.org/read-and-watch/world-of-orchids",
+    "source_title": "The wonderful world of orchids",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn5search4",
+    "result": "verified",
+    "support": "Semillas sin reservas, hongos y engaño de algunos polinizadores."
+  },
+  {
+    "id": "semillas-frio-respaldo",
+    "source_url": "https://www.kew.org/read-and-watch/seed-collecting-msb",
+    "source_title": "How to preserve seeds for the future",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn5search10",
+    "result": "verified",
+    "support": "Secado, calidad, recipientes herméticos, -20 °C, germinación periódica y especies excepcionales."
+  },
+  {
+    "id": "epifitas-bosque-aereo",
+    "source_url": "https://www.kew.org/read-and-watch/how-rare-are-orchids",
+    "source_title": "Above the forest floor: how rare are orchids in the wild?",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn5search11",
+    "result": "verified",
+    "support": "Epífitas no parásitas; análisis global encontró rangos menores en promedio."
+  },
+  {
+    "id": "bambu-hierba-gigante",
+    "source_url": "https://www.kew.org/read-and-watch/bamboo-kew-pandas",
+    "source_title": "Things you should know about bamboo",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn8search2",
+    "result": "verified",
+    "support": "Poaceae; algunas especies crecen 1 m/24 h; usos tradicionales."
+  },
+  {
+    "id": "aloe-reserva-hojas",
+    "source_url": "https://www.kew.org/read-and-watch/extreme-plant-survivors-baobab",
+    "source_title": "Extreme plant survivors",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn8search3",
+    "result": "verified",
+    "support": "Hojas cerosas, tejidos parénquima de reserva y estudios Kew; sin consejo médico."
+  },
+  {
+    "id": "nenufar-especie-oculta",
+    "source_url": "https://www.kew.org/read-and-watch/new-giant-waterlily-victoria-boliviana-discovered-at-kew",
+    "source_title": "Uncovering the Bolivian waterlily",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn8search1",
+    "result": "verified",
+    "support": "Identificación 2022, herbario >180 años, morfología y ADN, colaboración boliviana."
+  },
+  {
+    "id": "ginkgo-linaje-ciudad",
+    "source_url": "https://www.kew.org/read-and-watch/ginkgo-biloba-dig-deeper",
+    "source_title": "Ginkgo: The dinosaur tree that's still with us",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn58view4",
+    "result": "verified",
+    "support": "Kew confirma linaje antiguo ornamental y que estructuras llamadas frutos no son frutos botánicos."
+  },
+  {
+    "id": "manglar-sal-gestion",
+    "source_url": "https://marinewaters.fish.wa.gov.au/resource/fact-sheet-mangroves/",
+    "source_title": "Fact Sheet: Mangroves",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn49search0",
+    "result": "verified",
+    "support": "Adaptaciones intermareales, membranas excluyen sal y algunas especies almacenan sal en tejidos."
+  },
+  {
+    "id": "rosetta-tres-escrituras",
+    "source_url": "https://www.khanacademy.org/humanities/ancient-art-civilizations/egyptian-art/beginners-guide-egyptian-art/a/the-rosetta-stone",
+    "source_title": "The Rosetta Stone",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn3search1",
+    "result": "verified",
+    "support": "Tres escrituras, decreto 196 a. C., hallazgo 1799, fragmento de estela."
+  },
+  {
+    "id": "lewis-ajedrez-viajero",
+    "source_url": "https://www.britishmuseumshoponline.org/lewis-chessmen.html",
+    "source_title": "The Lewis Chessmen: Object in Focus",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn3search0",
+    "result": "verified",
+    "support": "Materiales, datación probable noruega y contexto político; comerciante solo hipótesis."
+  },
+  {
+    "id": "sutton-hoo-rostro-reconstruido",
+    "source_url": "https://www.britishmuseum.org/sites/default/files/2021-05/large_print_guide_room_41.pdf",
+    "source_title": "Large Print Guide – Room 41 Sutton Hoo and Europe",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn2search60",
+    "result": "verified",
+    "support": "Reconstrucción de fragmentos, componentes, decoración y paralelos suecos."
+  },
+  {
+    "id": "ciro-cilindro-contexto",
+    "source_url": "https://artsandculture.google.com/asset/cyrus-cylinder/4wHjbQnYhZgzVQ?hl=en",
+    "source_title": "Cyrus cylinder",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn2search0",
+    "result": "verified",
+    "support": "Conquista 539 a.C., Marduk, retornos; advertencia sobre etiqueta primera carta derechos."
+  },
+  {
+    "id": "ur-juego-mesa-antiguo",
+    "source_url": "https://www.schoyencollection.com/24-smaller-collections/miscellaneous/ms-3223-royal-game-ur",
+    "source_title": "ROYAL GAME OF UR",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn3search4",
+    "result": "verified",
+    "support": "Juego de recorrido para dos; tablero Ur y tablilla 177 a.C. corresponden a etapas diferentes."
+  },
+  {
+    "id": "escritura-cuentas-barro",
+    "source_url": "https://www.metmuseum.org/ja/essays/the-origins-of-writing",
+    "source_title": "The Origins of Writing",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn24search0",
+    "result": "verified",
+    "support": "Tablillas administrativas y variedad de usos cuneiformes a mediados tercer milenio."
+  },
+  {
+    "id": "papiro-tecnologia-fibras",
+    "source_url": "https://www.metmuseum.org/ja/essays/papyrus-making-in-egypt",
+    "source_title": "Papyrus-Making in Egypt",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn11search8",
+    "result": "verified",
+    "support": "Tiras cruzadas, proceso parcialmente reconstruido, rollos y causas de degradación."
+  },
+  {
+    "id": "vidrio-romano-soplar",
+    "source_url": "https://www.metmuseum.org/it/essays/roman-glass",
+    "source_title": "Roman Glass",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn11search1",
+    "result": "verified",
+    "support": "Soplado siropalestino primer siglo a.C., variedad, propiedades y coexistencia de moldeado."
+  },
+  {
+    "id": "maya-ciudades-escultores",
+    "source_url": "https://www.metmuseum.org/es/essays/ancient-maya-sculpture",
+    "source_title": "Ancient Maya Sculpture",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn18search0",
+    "result": "verified",
+    "support": "Medios escultóricos, ciudades clásicas 250-900 e influencias posteriores norte."
+  },
+  {
+    "id": "seda-red-caminos",
+    "source_url": "https://whc.unesco.org/en/list/1442",
+    "source_title": "Silk Roads: the Routes Network of Chang'an-Tianshan Corridor",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn20search0",
+    "result": "verified",
+    "support": "Red, componentes patrimoniales y circulación de ideas además de mercancías."
+  },
+  {
+    "id": "momias-sequedad-conservacion",
+    "source_url": "https://www.si.edu/spotlight/ancient-egypt/mummies",
+    "source_title": "Egyptian Mummies",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn16search0",
+    "result": "verified",
+    "support": "Retirada humedad, conservación natural previa, finalidad religiosa y evolución prolongada."
+  },
+  {
+    "id": "teatro-griego-espacio",
+    "source_url": "https://www.metmuseum.org/es/essays/theater-in-ancient-greece",
+    "source_title": "Theater in Ancient Greece",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn17search0",
+    "result": "verified",
+    "support": "Orchestra y theatron, teatros aire libre y reformas que limitan reconstrucción histórica."
+  },
+  {
+    "id": "roma-acueducto-sistema",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7004096/",
+    "source_title": "The Aqueducts and Water Supply of Ancient Rome",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn75view0",
+    "result": "verified",
+    "support": "11 acueductos, >500 años, Aqua Appia 312 a.C., usos baños y fuentes."
+  },
+  {
+    "id": "bizancio-iconos-materiales",
+    "source_url": "https://www.metmuseum.org/it/essays/icons-and-iconoclasm-in-byzantium",
+    "source_title": "Icons and Iconoclasm in Byzantium",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn15search0",
+    "result": "verified",
+    "support": "Diversidad soportes, tamaños, pendientes y trípticos; contexto devocional."
+  },
+  {
+    "id": "machu-picchu-paisaje",
+    "source_url": "https://whc.unesco.org/en/list/274",
+    "source_title": "Historic Sanctuary of Machu Picchu",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn38search0",
+    "result": "verified",
+    "support": "Patrimonio mixto, ~2430 m, encuentro Andes Amazonía, muros terrazas rampas."
+  },
+  {
+    "id": "qhapaq-nan-conectar",
+    "source_url": "https://whc.unesco.org/en/list/1459",
+    "source_title": "Qhapaq Ñan, Andean Road System",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn58view1",
+    "result": "verified",
+    "support": "Red estatal, infraestructura preinca, expansión siglo XV, técnicas y comunidades custodias."
+  },
+  {
+    "id": "tombuctu-saber-desierto",
+    "source_url": "https://whc.unesco.org/en/list/119",
+    "source_title": "Timbuktu",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn58view2",
+    "result": "verified",
+    "support": "Centro intelectual XV-XVI, Sankoré, tres mezquitas y comercio manuscritos."
+  },
+  {
+    "id": "gran-zimbabue-piedra",
+    "source_url": "https://whc.unesco.org/en/list/364/",
+    "source_title": "Great Zimbabwe National Monument",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn35search0",
+    "result": "verified",
+    "support": "Shona, siglos XI-XV, centro comercial y tres sectores; leyenda no tomada como hecho."
+  },
+  {
+    "id": "petra-agua-roca",
+    "source_url": "https://whc.unesco.org/en/list/326",
+    "source_title": "Petra",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn36search0",
+    "result": "verified",
+    "support": "Cruce caravanero, construcción/excavación y sistema hidráulico permite asentamiento árido."
+  },
+  {
+    "id": "angkor-mas-templo",
+    "source_url": "https://whc.unesco.org/en/list/668/",
+    "source_title": "Angkor",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn37search0",
+    "result": "verified",
+    "support": "Capitales IX-XV; Angkor Wat/Bayon; depósitos canales diques y vías."
+  },
+  {
+    "id": "borobudur-recorrido-piedra",
+    "source_url": "https://whc.unesco.org/en/list/592/",
+    "source_title": "Borobudur Temple Compounds",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn41search0",
+    "result": "verified",
+    "support": "Datación VIII-IX, terrazas cuadradas, plataformas circulares, 72 estupas y restauración setenta."
+  },
+  {
+    "id": "hattusha-capital-relieve",
+    "source_url": "https://whc.unesco.org/en/list/377",
+    "source_title": "Hattusha: the Hittite Capital",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn40search0",
+    "result": "verified",
+    "support": "Capital hitita segundo milenio a.C., planificación y puertas, santuario Yazılıkaya."
+  },
+  {
+    "id": "lascaux-mirar-paleolitico",
+    "source_url": "https://whc.unesco.org/en/list/85",
+    "source_title": "Prehistoric Sites and Decorated Caves of the Vézère Valley",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn58view3",
+    "result": "verified",
+    "support": "Calidad pictórica, descubrimiento 1940, conjunto arqueológico y vulnerabilidad acceso."
+  },
+  {
+    "id": "catalhoyuk-entrar-tejado",
+    "source_url": "https://whc.unesco.org/es/list/1405/",
+    "source_title": "Sitio neolítico de Çatalhöyük",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn39search0",
+    "result": "verified",
+    "support": "Dos montículos, estratigrafía neolítica y casas sin calles con acceso tejados."
+  },
+  {
+    "id": "pompeya-vida-comparada",
+    "source_url": "https://whc.unesco.org/en/list/829",
+    "source_title": "Archaeological Areas of Pompei, Herculaneum and Torre Annunziata",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn42search0",
+    "result": "verified",
+    "support": "Erupción 79; contraste Pompeya comercial/Herculano/villas; omite fecha exacta discutida."
+  },
+  {
+    "id": "atencion-ver-no-notar",
+    "source_url": "https://dictionary.apa.org/attentional-blindness",
+    "source_title": "attentional blindness",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn52search0",
+    "result": "verified",
+    "support": "Definición APA: falta detección por factores atencionales y no déficit perceptivo; ejemplo inventado identificado como imaginación."
+  },
+  {
+    "id": "cambio-visual-comparar",
+    "source_url": "https://dictionary.apa.org/change-blindness",
+    "source_title": "change blindness",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn50search0",
+    "result": "verified",
+    "support": "Definición, transitorios enmascarados, pantalla en blanco y teorías múltiples; aplicación como sugerencia."
+  },
+  {
+    "id": "anclaje-numero-inicial",
+    "source_url": "https://dictionary.apa.org/anchoring-bias",
+    "source_title": "anchoring bias",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn51search0",
+    "result": "verified",
+    "support": "Peso excesivo inicio y ajuste insuficiente; escenarios y práctica editorial no presentados como estudio."
+  },
+  {
+    "id": "mera-exposicion-familiaridad",
+    "source_url": "https://dictionary.apa.org/mere-exposure-effect",
+    "source_title": "mere-exposure effect",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn47search0",
+    "result": "verified",
+    "support": "Preferencia por exposición repetida; mayor probabilidad sin actitud negativa previa."
+  },
+  {
+    "id": "falso-consenso-mi-circulo",
+    "source_url": "https://dictionary.apa.org/false-consensus-effect",
+    "source_title": "false-consensus effect",
+    "checked_at": "2026-11-12",
+    "method": "Web search/open retrieval; editorial claim review against retrieved text",
+    "retrieval_reference": "turn48search0",
+    "result": "verified",
+    "support": "Sobreestimación coincidencia y motivación atribuida habitualmente; escenario hipotético claro."
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "readings": 200,
+  "categories": {
+    "Sociedad": 15,
+    "Cultura": 15,
+    "IA": 20,
+    "Naturaleza": 25,
+    "Historia": 25,
+    "Psicología": 25,
+    "Ingeniería": 15,
+    "Liderazgo": 15,
+    "Ciencia": 20,
+    "Universo": 25
+  },
+  "total_words": 36844,
+  "unique_source_urls": 200,
+  "errors": []
+}

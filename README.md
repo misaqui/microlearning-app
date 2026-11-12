@@ -1,25 +1,18 @@
 # Microlearning Hub
 
-Prototipo Flutter Web con tres microlecciones originales, detalle y favoritos locales persistentes. Repasar y Perfil siguen pendientes; no hay backend, autenticación ni sincronización entre dispositivos.
+Flutter Web: catálogo local de 200 microlecturas originales en español,
+búsqueda y filtros en Descubrir, detalle con atribución y favoritos locales.
+150 lecturas de curiosidad y 50 profesionales; fuentes específicas verificadas.
 
-## Trabajo individual
-main es la única rama permanente. Cambios pequeños directamente en main; ramas temporales y PR a main cuando convenga aislar una mejora. No hay develop ni promoción entre ramas.
-Ver [flujo de trabajo](docs/BRANCH_WORKFLOW.md).
+## Desarrollo
+Ramas de implementación y PR a develop; promoción validada mediante PR a main.
+Ver docs/BRANCH_WORKFLOW.md y docs/superpowers/specs/2026-11-12-catalog-design.md.
 
 ## Validación
-Flutter 3.35.5. GitHub Actions genera la plataforma web, respeta pubspec.lock y ejecuta análisis, pruebas y compilación.
-Para un entorno con Flutter preparado:
-
-```sh
-flutter create --platforms=web --project-name microlearning_hub --no-pub .
-flutter pub get --enforce-lockfile
-flutter analyze --no-pub
-flutter test --no-pub
-flutter build web --release --no-pub
-```
+Flutter 3.35.5. Ejecutar python3 scripts/validate_catalog.py, flutter analyze,
+flutter test y flutter build web. GitHub Actions comprueba develop y main.
 
 ## Publicación
-Render usa main, build `bash scripts/build-render-web.sh` y directorio `build/web`. El despliegue es manual y autoDeploy permanece desactivado. Integrar no publica automáticamente.
-Ver [despliegue](docs/RENDER_DEPLOYMENT.md) y [evidencias](docs/PILOT_VALIDATION.md).
-
-Los favoritos pertenecen al navegador/origen/perfil y pueden perderse al borrar sus datos. No guardar secretos. Consultar [procedencia](docs/UPSTREAM_PROVENANCE.md) antes de distribuir contenido derivado.
+Render sigue main con autoDeploy off; publicación manual tras validación.
+Los favoritos pertenecen al navegador/origen y no se sincronizan. Sin backend
+ni llamadas IA en el producto. Evidencia editorial en docs/content_audit/.

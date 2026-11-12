@@ -10,9 +10,9 @@ Build an independently authored, maintainable Flutter microlearning product. Opt
 - Explicitly distinguish proposed, implemented, tested and deployed work.
 
 ## Workflow
-- main is the single permanent development and integration branch. The owner works alone; do not recreate develop or add a release-promotion branch.
-- Keep the process proportional: small low-risk changes can go directly to main after validation; use a short-lived branch and PR into main when isolation or review helps. Delete integrated temporary branches.
-- CI checks pushes and PRs targeting main with Flutter analysis, tests and web build. Administrative branch protection is separate; do not claim it exists unless verified.
+- Work on short-lived implementation branches from develop and open work PRs into develop.
+- Promote validated releases through a develop-to-main PR; main contains validated releases only.
+- CI checks pushes and PRs targeting develop and main. Administrative branch protection must be verified separately.
 - Render tracks main with manual releases and autoDeploy off. A merge or push does not itself authorize a deployment.
 - Before editing, read the relevant code, product specification and architecture. Change only what the task needs.
 - Keep work independently authored; do not copy legacy Deepstash source, assets or proprietary content.
