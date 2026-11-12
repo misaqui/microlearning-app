@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:microlearning_hub/favorite_store.dart';
 import 'package:microlearning_hub/main.dart';
+import 'fixtures.dart';
 
 class ControlledStore implements FavoriteStore {
   Set<String> ids = {'focus', 'unknown'};
@@ -30,7 +31,9 @@ void main() {
     'two activations before a rebuild start only one favorite write',
     (tester) async {
       final store = ControlledStore()..pendingWrite = Completer<void>();
-      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpWidget(
+        MicrolearningApp(favoriteStore: store, catalogLoader: fixtureCatalog),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('idea-recall')));
       await tester.pumpAndSettle();
@@ -57,7 +60,9 @@ void main() {
       expect(store.writeCalls, 2);
       expect(find.text('Guardar en Biblioteca'), findsOneWidget);
       await tester.pumpWidget(const SizedBox.shrink());
-      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpWidget(
+        MicrolearningApp(favoriteStore: store, catalogLoader: fixtureCatalog),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.byIcon(Icons.bookmark_outline));
       await tester.pumpAndSettle();
@@ -68,7 +73,9 @@ void main() {
 
   testWidgets('unreadable library is not presented as empty', (tester) async {
     final store = ControlledStore()..failRead = true;
-    await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+    await tester.pumpWidget(
+      MicrolearningApp(favoriteStore: store, catalogLoader: fixtureCatalog),
+    );
     await tester.pumpAndSettle();
     await tester.tap(find.byIcon(Icons.bookmark_outline));
     await tester.pumpAndSettle();
@@ -84,7 +91,9 @@ void main() {
     'write in previous detail prevents a second stale snapshot write',
     (tester) async {
       final store = ControlledStore()..pendingWrite = Completer<void>();
-      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpWidget(
+        MicrolearningApp(favoriteStore: store, catalogLoader: fixtureCatalog),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('idea-recall')));
       await tester.pumpAndSettle();
@@ -92,6 +101,11 @@ void main() {
       await tester.pump();
       await tester.pageBack();
       await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(find.byKey(const Key('idea-habits')), 150,
+          scrollable: find
+              .descendant(
+                  of: find.byType(ListView), matching: find.byType(Scrollable))
+              .first);
       await tester.tap(find.byKey(const Key('idea-habits')));
       await tester.pumpAndSettle();
       expect(
@@ -115,12 +129,19 @@ void main() {
       await tester.tap(find.text('Guardar en Biblioteca'));
       await tester.pumpAndSettle();
       await tester.pumpWidget(const SizedBox.shrink());
-      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpWidget(
+        MicrolearningApp(favoriteStore: store, catalogLoader: fixtureCatalog),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.byIcon(Icons.bookmark_outline));
       await tester.pumpAndSettle();
       expect(find.text('La atención es un recurso limitado'), findsOneWidget);
       expect(find.text('Recordar refuerza el aprendizaje'), findsOneWidget);
+      await tester.scrollUntilVisible(find.byKey(const Key('idea-habits')), 150,
+          scrollable: find
+              .descendant(
+                  of: find.byType(ListView), matching: find.byType(Scrollable))
+              .first);
       expect(find.text('Empieza con hábitos pequeños'), findsOneWidget);
     },
   );
@@ -129,7 +150,9 @@ void main() {
     'read failure protects storage while discovery remains available',
     (tester) async {
       final store = ControlledStore()..failRead = true;
-      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpWidget(
+        MicrolearningApp(favoriteStore: store, catalogLoader: fixtureCatalog),
+      );
       await tester.pumpAndSettle();
       expect(find.textContaining('No se pudo leer Biblioteca'), findsOneWidget);
       await tester.tap(find.byKey(const Key('idea-focus')));
@@ -150,7 +173,9 @@ void main() {
     'write failure keeps saved state and permits a successful retry',
     (tester) async {
       final store = ControlledStore()..failWrite = true;
-      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpWidget(
+        MicrolearningApp(favoriteStore: store, catalogLoader: fixtureCatalog),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('idea-focus')));
       await tester.pumpAndSettle();
@@ -166,7 +191,9 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('Guardar en Biblioteca'), findsOneWidget);
       await tester.pumpWidget(const SizedBox.shrink());
-      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpWidget(
+        MicrolearningApp(favoriteStore: store, catalogLoader: fixtureCatalog),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.byIcon(Icons.bookmark_outline));
       await tester.pumpAndSettle();
@@ -181,7 +208,9 @@ void main() {
     'pending write disables repeat saves and safely finishes after leaving detail',
     (tester) async {
       final store = ControlledStore()..pendingWrite = Completer<void>();
-      await tester.pumpWidget(MicrolearningApp(favoriteStore: store));
+      await tester.pumpWidget(
+        MicrolearningApp(favoriteStore: store, catalogLoader: fixtureCatalog),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('idea-recall')));
       await tester.pumpAndSettle();
